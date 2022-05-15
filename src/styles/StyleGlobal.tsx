@@ -142,7 +142,7 @@ body{
     }
 
     input, button {
-      font-weight: 200;
+      font-weight: 400;
     }
 }
 `;

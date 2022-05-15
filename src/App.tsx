@@ -1,6 +1,8 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { StyleGlobal } from './styles/StyleGlobal';
-import PageInit from './pages/PageInit';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import PageInit from "./pages/PageInit";
+import PageLogin from "./pages/PageLogin";
+import { StyleGlobal } from "./styles/StyleGlobal";
 
 export default function App() {
   return (
@@ -9,6 +11,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<PageInit />} />
+          <Route path="/login" element={<PageLogin />} />
         </Routes>
       </BrowserRouter>
     </>
