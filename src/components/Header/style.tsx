@@ -1,12 +1,18 @@
 import styled from "styled-components";
 
+interface PropStyled {
+  colorType: string;
+}
+
 const ContentHeader = styled.div`
   height: 50px;
   width: 100%;
-  background-color: #986218;
+  background-color: ${({ colorType }: PropStyled) =>
+    colorType === "cliente" ? "#986218" : "white"};
   padding: 0 15px;
 
-  color: white;
+  color: ${({ colorType }: PropStyled) =>
+    colorType === "cliente" ? "white" : "black"};
   font-weight: 800;
   font-size: 16px;
 

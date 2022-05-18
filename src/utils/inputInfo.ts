@@ -1,13 +1,18 @@
 export interface Input {
   label: string;
-  type: string;
+  type: "email" | "password";
 }
 
-const clientInput = [
+export interface FormData {
+  email: string;
+  password: string;
+}
+
+const inputsLogin: Input[] = [
   { label: "E-mail", type: "email" },
   { label: "Senha", type: "password" },
 ];
 
-const inputInfos = { clientInput };
+const inputInfos = { inputsLogin };
 
 export { inputInfos };
