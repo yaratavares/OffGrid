@@ -14,7 +14,7 @@ export interface StyledPropWithTypeUser {
   userType: string | null;
 }
 
-export default function PageLogin() {
+export default function PageSignUp() {
   const query = useQuery();
   const navigate = useNavigate();
   const [params, setParams] = useState(query.get("type"));
@@ -32,23 +32,23 @@ export default function PageLogin() {
   function loginClient(e: React.FormEvent) {
     e.preventDefault();
 
-    console.log("OK! Processo de login cliente");
+    console.log("OK! Processo de cadastro cliente");
   }
 
   function loginCompany(e: React.FormEvent) {
     e.preventDefault();
 
-    console.log("OK! Processo de login empresa");
+    console.log("OK! Processo de cadastro empresa");
   }
 
-  const handleClickButtonCreateAccount = () => {
-    navigate(`/signup?type=${params}`);
+  const handleClickButtonLoginAccount = () => {
+    navigate(`/login?type=${params}`);
   };
 
   return (
     <PageContainer>
       <Header
-        typePage="Login"
+        typePage="Cadastro"
         userType={params === "client" ? "cliente" : "mecânico"}
       />
       <BoxPage>
@@ -65,10 +65,10 @@ export default function PageLogin() {
         </form>
         <Divider />
         <FormButton
-          name="CRIAR CONTA"
+          name="FAZER LOGIN"
           typeButton="button"
           userType={params}
-          handleClick={handleClickButtonCreateAccount}
+          handleClick={handleClickButtonLoginAccount}
         />
       </BoxPage>
     </PageContainer>

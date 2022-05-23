@@ -3,13 +3,16 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { ContentHeader } from "./style";
 
 interface Props {
+  typePage: string;
   userType: string;
 }
 
-export default function Header({ userType }: Props) {
+export default function HeaderInit({ typePage, userType }: Props) {
   return (
     <ContentHeader colorType={userType}>
-      <p>Login {userType}</p>
+      <p>
+        {typePage} {userType}
+      </p>
       <MoreVertIcon />
     </ContentHeader>
   );

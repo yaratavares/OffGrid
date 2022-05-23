@@ -1,17 +1,18 @@
 import Box from "@mui/material/Box";
-import { useState } from "react";
+import React from "react";
 
-import { StyledPropWithTypeUser } from "../../pages/PageLogin";
 import { FormData, Input, inputInfos } from "../../utils/inputInfo";
 import FormButton from "../FormButton";
 import FormInput from "../FormInput";
 
-export default function FormLogin({ userType }: StyledPropWithTypeUser) {
+interface Props {
+  userType: string | null;
+  formData: FormData;
+  setFormData: React.Dispatch<React.SetStateAction<FormData>>;
+}
+
+export default function FormLogin({ userType, formData, setFormData }: Props) {
   const inputs = inputInfos.inputsLogin;
-  const [formData, setFormData] = useState<FormData>({
-    email: "",
-    password: "",
-  });
 
   return (
     <Box
@@ -29,7 +30,12 @@ export default function FormLogin({ userType }: StyledPropWithTypeUser) {
           setFormData={setFormData}
         />
       ))}
-      <FormButton name="ENTRAR" typeButton="submit" userType={userType} />
+      <FormButton
+        name="ENTRAR"
+        typeButton="submit"
+        userType={userType}
+        handleClick={undefined}
+      />
     </Box>
   );
 }
